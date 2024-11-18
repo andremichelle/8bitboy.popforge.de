@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Description" content="A MOD Player for the Flash Player." />
+<meta name="Keywords" content="flash mod player actionscript chiptunes 8bit 8bitboy amiga tracker" />
+<meta name="author" content="Andre Michelle Joa Ebert" />
+<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+<link rel="shortcut icon" href="favicon.ico" >
+<title>8BitBoy :: A Flash based Amiga Modplayer</title>
+<style type="text/css">
+<!--
+.style1 {color: #666666}
+.style2 {
+	color: #FF0000
+}
+-->
+<script type="text/javascript" src="swfobject.js"></script>
+<script type="text/javascript">
+swfobject.registerObject("bitboy", "10.0.0", "expressInstall.swf");
+</script>
+</style>
+</head>
+<body>
+<div id="centerColumn">
+  <div id="header">
+    <h1><img src="logo.gif" alt="logo" width="357" height="49" /></h1>
+    <h1>8BitBoy</h1>
+    <h2>A Flash based Amiga Modplayer</h2>
+    <h2>&nbsp;</h2>
+  </div>
+  <!--//end #headern//-->
+  <div id="fauxRightColumn">
+    <h2>links</h2>
+    <ul>
+      <li><a href="http://8bitboy.popforge.de" title="home">8Bitboy</a></li>
+      <li><a href="https://8bitboy.googlecode.com" title="GoogleCode">Source Code</a></li>
+      <li><a href="http://en.wikipedia.org/wiki/MOD_(file_format)" title="wikipedia">Wikipedia on MOD</a></li>
+      <li><a href="http://www.textfiles.com/artscene/music/information/karstenobarski.html"> Retrospective Karsten Obarski</a></li>
+      <li><a href="http://www.protracker.de/pages/index_apps.php?action=0&amp;com=1/8/5/amiga/tracker/0">Amiga Tracker</a></li>
+    </ul>
+    <p>This project is started by <a href="http://www.andre-michelle.com">Andre Michelle</a> and <a href="http://je2050.de">Joa Ebert</a>.</p>
+    <p>Design is contributed by <a href="http://www.andrestubbe.com">Andre Stubbe</a>.</p>
+  </div>
+  <!--//end #fauxRightColumn//-->
+  <h2>Introduction</h2>
+  <p align="left">Karsten Obarski invented 1987 - twenty years ago - the MOD format for his Ultimate Tracker running on Amiga computers. Since then, countless songs are created, especially for the demoscene. </p>
+  <p align="left">MODs have special attributes. All samples are stored in 8bits and the number of voices is limited to four. To have something similarly to chords, the three notes of it are repeated very fast. This makes MODs sound so freaky.</p>
+  <p>Finally 8BitBoy brings those songs back online.</p>
+  <h2>Player</h2>
+  <br/>
+		<div>	
+			<object id="bitboy" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="150" height="57">
+				<param name="movie" value="BitboyApp.swf" />
+        		<!--[if !IE]>-->
+				<object type="application/x-shockwave-flash" data="BitboyApp.swf" width="150" height="57">
+				<!--<![endif]-->
+				<div>
+					<h1>Alternative content</h1>
+					<p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a></p>
+				</div>
+				<!--[if !IE]>-->
+				</object>
+				<!--<![endif]-->
+			</object>
+		</div>
+  
+  
+  <div id="8bitboy">
+    <script type="text/javascript">
+					// <![CDATA[
+						
+						var version = deconcept.SWFObjectUtil.getPlayerVersion();
+						if( document.getElementById )
+						{
+							if ( version['major'] > 0 )
+							{
+								document.getElementById('8bitboy').innerHTML = "You have Flash player "+ version['major'] +"."+ version['minor'] +"."+ version['rev'] +" installed. Please upgrade to the current version <a href='http://www.adobe.com/go/getflashplayer'>here</a> !";
+							}
+							if( version['major'] >= 9 )
+							{
+								var so = new SWFObject("BitboyApp.swf", "8bitboy", "150", "57", "9", "#FFFFFF");
+								so.write("8bitboy");
+							}
+						}
+					// ]]>
+				</script>
+  </div>
+  <h2>Instructions</h2>
+  <p>8Bitboy behaves like a normal Media player. Press Play. Get the context menu (right click) for enabling StereoEnhancer and BassBoost. You can (un-)mute channels by CTRL + [1-4].</p>
+  <h2>Update - July 28, 2014</h2>
+  <p><a href="https://www.defrac.com/sample-8bitboy/">javascript version</a> cross-compiled with <a href="https://www.defrac.com/">defrac</a></p>
+  <h2>Update - June 16, 2013</h2>
+  <p>Concurrency version at <a href="https://8bitboy.googlecode.com">googlecode</a>!</p>
+  <h2>Update - August 22, 2009</h2>
+  <p>Implemented Flash 10 Sound API (Quick and dirty)</p>
+  <p>Spectrum Analyser added</p>
+  <p>Added new effects (TonePortamento - Vibrato)</p>
+  <p>Rewriting of the core waveform playback - again better performance! (&lt;2%)</p>
+  <p>8Bitboy has now a StereoEnhancer and a BassBoost.</p>
+  <p>We could dramatically increase the performance of the player. On my machine (DELL Inspiron 9300 Laptop) it takes only about 4% CPU!</p>
+  <p>Complete rewrite of the core engine.</p>
+  <p class="style1">We built the initial engine in aug06 within 12 hours for fun. One week later Andre Stubbe suppies the designs.</p>
+  <h2>Open Source</h2>
+  <p>8BitBoy is open source. This includes the audio hack -a piece of code to create dynamic audio with the flash player 9. Follow the links above.</p>
+  <h2>Download</h2>
+  <p>A binary output for embedding the 8Bitboy on your site including a config XML plus a PHP script for scanning an entire folder for MODs is also available here.</p>
+  <p><a href="http://8bitboy.popforge.de/download.php?file=8bitboy.zip"><img src="diskette.gif" alt="download" width="20" height="20" border="0" /></a></p>
+  <p class="style2">Make sure you update your copy once in a while. We are continously enhancing the player.</p>
+  <h2>Known issues</h2>
+  <p>Not all effects are implemented, yet.</p>
+  <h2>Future Plans</h2>
+  <p>Support more MOD formats</p>
+  <p>AIR version <a href="http://labs.adobe.com/technologies/air">?</a></p>
+  <h2>Contact</h2>
+  <p>If you want to contribute source code, please contact me.</p>
+  <p>am{-at-}andre-michelle.com</p>
+  <h2>Thank You!</h2>
+<p>&nbsp;</p>
+  <p><a href="http://www.addthis.com/bookmark.php?pub=addthis&amp;url=http://8bitboy.popforge.de"><img src="button1-bm.gif" alt="add" width="125" height="16" border="0" /></a></p>
+  <div id="footer"> <a href="http://validator.w3.org/" title="W3C HTML Validation">XHTML</a> | <a href="http://jigsaw.w3.org/css-validator/validator-uri.html" title="W3C CSS Validation">CSS</a> | <a href="http://www.w3.org/TR/WCAG10/" title="Web Content Accessibility Guidelines">WCAG</a> | <a href="http://www.csstinderbox.com">The CSS Tinderbox</a>
+    </p>
+  </div>
+  <!--//end #footer//-->
+</div>
+<!--//end #centerColumn//-->
+</body>
+</html>
